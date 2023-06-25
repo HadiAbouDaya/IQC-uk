@@ -19,3 +19,9 @@ document.getElementById('get-price').addEventListener('click', function() {
   document.getElementById('totalPrice').innerText = totalPrice;
 });
 
+// Ignore the error related to 'interest-cohort' feature
+window.addEventListener('error', function(e) {
+  if (e.message === "Permissions-Policy header: 'interest-cohort' is not a recognized directive.") {
+    e.preventDefault();
+  }
+});
