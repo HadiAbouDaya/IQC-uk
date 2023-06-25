@@ -1,40 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  <header>
+    <img src="./IQC-uk.png" alt="Company Logo" class="logo">
+  </header>
   <div class="container">
-    <label for="input1">Input1:</label>
-    <input id="input1" type="text">
+    <fieldset>
+      <legend>Number of Employees:</legend>
+      <select id="numEmployees">
+      	<option value="1">1 to 5</option>
+      	<option value="2">6 to 10</option>
+      	<option value="3">11 to 15</option>
+      	<option value="4">16 to 25</option>
+      	<option value="5">26 to 45</option>
+      	<option value="6">46 to 65</option>
+      	<option value="7">66 to 85</option>
+      	<option value="8">86 to 125</option>
+      	<option value="9">126 to 175</option>
+      	<option value="10">176 to 275</option>
+      	<option value="11">276 to 425</option>
+      	<option value="12">426 to 625</option>
+      	<option value="13">626 to 875</option>
+      	<option value="14">876 to 1175</option>
+      	<option value="15">1176 to 1550</option>
+      	<option value="16">1551 to 2025</option>
+      	<option value="17">2026 to 2675</option>
+      	<option value="18">2676 to 3450</option>
+      	<option value="19">3451 to 4350</option>
+      	<option value="20">4351 to 5450</option>
+      	<option value="21">5451 to 6800</option>
+      	<option value="22">6801 to 8500</option>
+	<option value="23">8501 to 10700</option>
+      </select>
+    </fieldset>
 
-    <label for="dropdown1">Dropdown1:</label>
-    <select id="dropdown1">
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-
-    <label for="dropdown2">Dropdown2:</label>
-    <select id="dropdown2">
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-
-    <label for="dropdown3">Dropdown3:</label>
-    <select id="dropdown3">
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
+    <fieldset>
+      <legend>Risk Level:</legend>
+      <select id="riskLevel">
+      	<option value="1">None</option>
+      	<option value="2">Low</option>
+      	<option value="3">Medium</option>
+      	<option value="4">High</option>
+      </select>
+    </fieldset>
 
     <button id="get-price">Get price</button>
     
-    <label for="result">Result:</label>
-    <p id="result"></p>
-  </div>
+    <fieldset>
+      <legend>Audit Man Days:</legend>
+      <p id="auditDays"></p>
+    </fieldset>
 
+    <fieldset>
+      <legend>Total Price:</legend>
+      <p id="totalPrice"></p>
+    </fieldset>
+  </div>
   <script src="app.js"></script>
 </body>
 </html>
+
+
+
