@@ -18,7 +18,8 @@ header {
 }
 
 .logo {
-    height: 50px;
+  width: 7%;
+  height: auto;
 }
 
 .container {
@@ -79,3 +80,37 @@ header {
     }
 }
 
+
+#admin-button {
+  float: right;
+  margin-top: 10px;
+  padding: 1em 2em;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+#admin-button:hover {
+  background-color: #0056b3;
+}
+
+#admin-panel {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 2em;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
