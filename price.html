@@ -5,16 +5,33 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  <header>
+    <img src="./IQC-uk.png" alt="Company Logo" class="logo">
+  </header>
   <div class="container quotation">
-    <fieldset>
-      <legend>Audit Man Days:</legend>
-      <p id="auditDays"></p>
-    </fieldset>
+  <h1>Quotation</h1>
 
-    <fieldset>
-      <legend>Total Price:</legend>
-      <p id="totalPrice"></p>
-    </fieldset>
+<div class="box summary">
+  <h2>Summary of Your Selection</h2>
+  <p id="summaryEmployees"></p>
+  <p id="summaryRiskLevel"></p>
+  <p id="summaryStages"></p>
+</div>
+
+<div class="box totalDays">
+  <h2>Total Days</h2>
+  <p id="auditDays"></p>
+  <p id="surveillanceYear1"></p>
+  <p id="surveillanceYear2"></p>
+  <p id="reassessment"></p>
+</div>
+
+<div class="totalPrice">
+  <h2>Total Price</h2>
+  <p id="totalPrice"></p>
+</div>
+
+
   </div>
   <script src="price.js"></script>
 </body>

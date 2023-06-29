@@ -21,6 +21,9 @@ document.getElementById('get-price').addEventListener('click', function() {
 
   var auditDays = auditDaysMap[riskLevel][numEmployees-1]; // Subtracting 1 because array indices start at 0
 
+// Save the original auditDays value to local storage before modifying it for stageOption 2
+localStorage.setItem('originalAuditDays', auditDays);
+
   if (stageOption === '2') {
       auditDays = auditDays * 0.8; 
     }
@@ -32,6 +35,14 @@ document.getElementById('get-price').addEventListener('click', function() {
   // Instead of redirecting with URL parameters, save the values to localStorage
   localStorage.setItem('auditDays', auditDays);
   localStorage.setItem('totalPrice', totalPrice);
+
+    var employeeRange = document.getElementById('numEmployees').selectedOptions[0].text;
+    var riskLevelText = document.getElementById('riskLevel').selectedOptions[0].text;
+    var stageText = document.getElementById('stages').selectedOptions[0].text;
+
+    localStorage.setItem('employeeRange', employeeRange);
+    localStorage.setItem('riskLevel', riskLevelText);
+    localStorage.setItem('stage', stageText);
 
   // Redirect to the new page
   window.location.href = 'price.html';
