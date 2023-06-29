@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="admin-panel">
+    <h1>Admin Panel</h1>
+    <form id="admin-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" placeholder="Enter your username">
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password">
+      <button type="submit">Log In</button>
+    </form>
+    <form id="fee-form" class="hidden">
+      <label for="FeesPerAMD">Fees Per AMD:</label>
+      <input type="number" id="FeesPerAMD" placeholder="Enter fees per AMD">
+      <label for="LicenseFee">License Fee:</label>
+      <input type="number" id="LicenseFee" placeholder="Enter license fee">
+      <button type="submit">Update Fees</button>
+    </form>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

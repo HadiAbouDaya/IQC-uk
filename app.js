@@ -7,9 +7,10 @@ document.getElementById('get-price').addEventListener('click', function() {
   var riskLevel = document.getElementById('riskLevel').value;
   var stageOption = document.getElementById('stages').value;
 
-  // Initialize FeesPerAMD and LicenseFee if they are undefined
-  FeesPerAMD = FeesPerAMD || (numEmployees <= 45 ? 750 : 1500);
-  LicenseFee = LicenseFee || 2000;
+    // Initialize FeesPerAMD and LicenseFee with values from local storage, or set default values
+    FeesPerAMD = parseInt(localStorage.getItem('FeesPerAMD')) || (numEmployees <= 45 ? 750 : 1500);
+    LicenseFee = parseInt(localStorage.getItem('LicenseFee')) || 2000;
+
 
   var auditDaysMap = {
     '1': [1.50, 2.00, 2.50, 3.00, 4.00, 5.00, 6.00, 7.00, 8.00, 9.00, 10.00, 11.00, 12.00, 13.00, 14.00, 15.00, 16.00, 17.00, 18.00, 19.00, 20.00, 21.00, 22.00],
@@ -26,8 +27,14 @@ document.getElementById('get-price').addEventListener('click', function() {
 
   var totalPrice = LicenseFee + FeesPerAMD * auditDays;
 
-  document.getElementById('auditDays').innerText = auditDays;
-  document.getElementById('totalPrice').innerText = totalPrice;
+  // document.getElementById('auditDays').innerText = auditDays;
+  // document.getElementById('totalPrice').innerText = totalPrice;
+  // Instead of redirecting with URL parameters, save the values to localStorage
+  localStorage.setItem('auditDays', auditDays);
+  localStorage.setItem('totalPrice', totalPrice);
+
+  // Redirect to the new page
+  window.location.href = 'price.html';
 });
 
 // Ignore the error related to 'interest-cohort' feature
