@@ -1,5 +1,9 @@
 // price.js
 window.onload = function() {
+
+    var certName = localStorage.getItem('selectedISO')
+    if (!(certName === null)){ certName = certName.replace("iso-", "ISO ").toUpperCase(); }
+
     // Load the price and audit days
     var auditDays = localStorage.getItem('auditDays');
     var totalPrice = localStorage.getItem('totalPrice');
@@ -11,7 +15,13 @@ window.onload = function() {
 
 if (!auditDays || !totalPrice || !employeeRange || !riskLevel || !stage) {
     window.location.href = "index.html"; // Assuming that the main page is "index.html"
+    localStorage.removeItem('selectedISO');
 } else {
+  var quoteTitle = document.getElementById('quote-title');
+  // Set the text content of the <h1> tag
+  quoteTitle.textContent = "Quotation for " + certName;
+  localStorage.removeItem('selectedISO'); // Optional: remove the item from storage now that we've retrieved it
+
   document.getElementById('auditDays').innerText = auditDays;
   localStorage.removeItem('auditDays'); // Optional: remove the item from storage now that we've retrieved it
 

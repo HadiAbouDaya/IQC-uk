@@ -59,19 +59,32 @@ document.getElementById('admin-button').addEventListener('click', function() {
   document.getElementById('admin-panel').classList.remove('hidden');
 });
 
-document.getElementById('admin-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var username = document.getElementById('username').value;
-  var password = document.getElementById('password').value;
-  if (username === "admin" && password === "password123") {
-    document.getElementById('fee-form').classList.remove('hidden');
-  } else {
-    alert('Invalid credentials.');
-  }
-});
+document.addEventListener('DOMContentLoaded', (event) => {
+  var isoOptions = document.querySelectorAll('.iso-option');
+  var nextButton = document.getElementById('next-button');
 
-document.getElementById('fee-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  FeesPerAMD = parseInt(document.getElementById('FeesPerAMD').value);
-  LicenseFee = parseInt(document.getElementById('LicenseFee').value);
+  // Initially disable the Next button
+  nextButton.disabled = true;
+
+  isoOptions.forEach(function(option) {
+      option.addEventListener('click', function() {
+          // When an option is clicked, store the ISO name (id of the div) in localStorage
+          localStorage.setItem('selectedISO', this.id);
+
+          // Add a class to show the user which ISO is selected
+          isoOptions.forEach(function(opt) {
+              opt.classList.remove('selected');
+          });
+          this.classList.add('selected');
+
+          // Enable the Next button
+          nextButton.disabled = false;
+      });
+  });
+
+  nextButton.addEventListener('click', function() {
+      // Hide the ISO selection and show the main content when Next is clicked
+      document.getElementById('certification-selection').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+  });
 });
