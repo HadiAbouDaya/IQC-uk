@@ -23,9 +23,27 @@ if (!auditDays || !totalPrice || !employeeRange || !riskLevel || !stage) {
   localStorage.removeItem('selectedISO'); // Optional: remove the item from storage now that we've retrieved it
 
   document.getElementById('auditDays').innerText = auditDays;
+  var decimalAuditDays = auditDays % 1;
+  if (decimalAuditDays >= 0.5) {
+    auditDays = Math.ceil(auditDays);
+  } else {
+    auditDays = Math.floor(auditDays);
+  }
+  if (auditDays === 0) {
+    auditDays = 1;
+  }
   localStorage.removeItem('auditDays'); // Optional: remove the item from storage now that we've retrieved it
 
   document.getElementById('totalPrice').innerText = totalPrice;
+  var decimalTotalPrice = totalPrice % 1;
+  if (decimalSurveillanceYear1 >= 0.5) {
+    totalPrice = Math.ceil(totalPrice);
+  } else {
+    totalPrice = Math.floor(totalPrice);
+  }
+  if (totalPrice === 0) {
+    totalPrice = 1;
+  }
   localStorage.removeItem('totalPrice'); // Optional: remove the item from storage now that we've retrieved it
 
   // Populate the summary
@@ -48,6 +66,38 @@ if (!auditDays || !totalPrice || !employeeRange || !riskLevel || !stage) {
     var surveillanceYear1 = Math.round(originalAuditDays / 3);
     var surveillanceYear2 = Math.round(originalAuditDays / 3);
     var reassessment = Math.round((originalAuditDays * 2) / 3);
+
+    var decimalSurveillanceYear1 = surveillanceYear1 % 1;
+    var decimalSurveillanceYear2 = surveillanceYear2 % 1;
+    var decimalReassessment = reassessment % 1;
+
+    if (decimalSurveillanceYear1 >= 0.5) {
+      surveillanceYear1 = Math.ceil(surveillanceYear1);
+    } else {
+      surveillanceYear1 = Math.floor(surveillanceYear1);
+    }
+    if (surveillanceYear1 === 0) {
+        surveillanceYear1 = 1;
+    }
+
+    if (decimalSurveillanceYear2 >= 0.5) {
+      surveillanceYear2 = Math.ceil(surveillanceYear2);
+    } else {
+      surveillanceYear2 = Math.floor(surveillanceYear2);
+    }
+    if (surveillanceYear2 === 0) {
+        surveillanceYear2 = 1;
+    }
+
+    if (decimalReassessment >= 0.5) {
+      reassessment = Math.ceil(reassessment);
+    } else {
+      reassessment = Math.floor(reassessment);
+    }
+    if (reassessment === 0) {
+      reassessment = 1;
+    }
+
     localStorage.removeItem('originalAuditDays');
 
         document.getElementById('surveillanceYear1').innerText = 'Surveillance year 1: ' + surveillanceYear1;
