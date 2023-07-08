@@ -6,8 +6,6 @@ var LicenseFee;
 
 document.getElementById('admin-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  document.getElementById('admin-form').addEventListener('submit', function(e) {
-  e.preventDefault();
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
   if (username === "admin" && password === "password123") {
@@ -17,8 +15,6 @@ document.getElementById('admin-form').addEventListener('submit', function(e) {
   } else {
     alert('Invalid credentials.');
   }
-});
-
 });
 
 document.getElementById('fee-form').addEventListener('submit', function(e) {
