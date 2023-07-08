@@ -32,8 +32,10 @@ header {
 }
 
 #admin-panel {
-    width: 100%;
-    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 20px auto;
     padding: 2em;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -80,4 +82,32 @@ header {
 
 #admin-panel button[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+#admin-panel button#reset-defaults-btn {
+    padding: 1em 2em;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+#admin-panel button#reset-defaults-btn:hover {
+    background-color: #cc0000;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  z-index: 1000;
 }

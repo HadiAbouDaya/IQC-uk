@@ -19,7 +19,7 @@ if (!auditDays || !totalPrice || !employeeRange || !riskLevel || !stage) {
 } else {
   var quoteTitle = document.getElementById('quote-title');
   // Set the text content of the <h1> tag
-  quoteTitle.textContent = "Quotation for " + certName;
+  quoteTitle.textContent = certName;
   localStorage.removeItem('selectedISO'); // Optional: remove the item from storage now that we've retrieved it
 
   document.getElementById('auditDays').innerText = auditDays;

@@ -8,7 +8,7 @@ document.getElementById('get-price').addEventListener('click', function() {
   var stageOption = document.getElementById('stages').value;
 
     // Initialize FeesPerAMD and LicenseFee with values from local storage, or set default values
-    FeesPerAMD = parseInt(localStorage.getItem('FeesPerAMD')) || (numEmployees <= 45 ? 750 : 1500);
+    FeesPerAMD = parseInt(localStorage.getItem('FeesPerAMD')) || 1000;
     LicenseFee = parseInt(localStorage.getItem('LicenseFee')) || 2000;
 
 
