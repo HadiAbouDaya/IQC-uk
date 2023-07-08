@@ -10,21 +10,35 @@ body {
 }
 
 header {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    background: #fff;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+header h1 {
+  flex-grow: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 30px;
+  max-width: calc(100% - 100px);
+}
+
 
 .logo {
   width: 4.5em;
   height: auto;
+  margin-right: auto;
+  margin-left: 0;
 }
 
 #quote-title {
@@ -40,8 +54,8 @@ header {
 .container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 800px;
+    align-items: flex-start;
+    justify-content: center;
     margin: 20px auto;
     padding: 2em;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
